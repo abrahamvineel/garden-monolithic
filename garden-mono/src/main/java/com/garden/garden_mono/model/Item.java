@@ -1,5 +1,6 @@
 package com.garden.garden_mono.model;
 
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +11,7 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
+@Entity
 public class Item {
 
     @Id
