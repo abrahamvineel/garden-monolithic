@@ -1,13 +1,10 @@
 package com.garden.garden_mono.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
@@ -16,11 +13,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @Builder
 @Entity
+@Table(name = "t_order")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String number;
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Item> orderItems;
 }
