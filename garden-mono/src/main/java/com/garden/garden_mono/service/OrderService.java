@@ -33,7 +33,9 @@ public class OrderService {
         return Item.builder()
                 .price(item.getPrice())
                 .quantity(item.getQuantity())
-                .code(item.getCode())
+                .name(item.getName())
+                .type(item.getType())
+                .skuCode(item.getSkuCode())
                 .build();
     }
 }

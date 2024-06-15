@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/order")
 @RequiredArgsConstructor
 public class OrderController {
 
     private final OrderService orderService;
 
+    @RequestMapping("/placeOrder")
     public void placeOrder(@RequestBody OrderRequest request) {
         orderService.createOrder(request);
     }
