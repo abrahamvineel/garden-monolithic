@@ -18,7 +18,7 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Integer id;
     private String number;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Item> orderItems;
