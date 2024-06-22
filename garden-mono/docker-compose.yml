@@ -2,9 +2,9 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_USER: your-db-username
-      POSTGRES_PASSWORD: your-db-password
-      POSTGRES_DB: your-db-name
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: garden
   app:
     build:
       context: .
