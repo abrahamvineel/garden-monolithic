@@ -5,11 +5,9 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: garden
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
     ports:
-      - "8080:8080"
-    depends_on:
-      - postgres
+      - "5432:5432"
+  app:
+    build: .
+    ports:
+      - "9191:9191"
