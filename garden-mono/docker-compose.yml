@@ -7,7 +7,21 @@ services:
       POSTGRES_DB: garden
     ports:
       - "5432:5432"
+    networks:
+      - g-network
+    volumes:
+      - postgres-s-data:/var/lib/postgresql/data
+
   app:
     build: .
     ports:
       - "9191:9191"
+    networks:
+      - g-network
+
+networks:
+    g-network:
+      driver: bridge
+
+volumes:
+  postgres-s-data:
